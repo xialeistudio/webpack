@@ -53,6 +53,8 @@ module.exports = {
   filters: {
   },
   complete: function(data, { chalk }) {
+    data.lint = true
+    data.lintConfig = 'standard'
     const green = chalk.green;
 
     sortDependencies(data, green);
