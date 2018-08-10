@@ -51,8 +51,6 @@ module.exports = {
     }
   },
   filters: {
-    '.eslintrc.js': true,
-    '.eslintignore': true
   },
   complete: function(data, { chalk }) {
     const green = chalk.green;
