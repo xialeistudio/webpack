@@ -26,11 +26,33 @@ module.exports = {
     }
   },
 
-  prompts: {},
+  prompts: {
+    autoInstall: {
+      when: 'isNotTest',
+      type: 'list',
+      message: 'Should we run `npm install` for you after the project has been created? (recommended)',
+      choices: [
+        {
+          name: 'Yes, use NPM',
+          value: 'npm',
+          short: 'npm'
+        },
+        {
+          name: 'Yes, use Yarn',
+          value: 'yarn',
+          short: 'yarn'
+        },
+        {
+          name: 'No, I will handle that myself',
+          value: false,
+          short: 'no'
+        }
+      ]
+    }
+  },
   filters: {
     '.eslintrc.js': true,
-    '.eslintignore': true,
-    'src/router/**/*': true
+    '.eslintignore': true
   },
   complete: function(data, { chalk }) {
     const green = chalk.green;
