@@ -1,36 +1,52 @@
-# {{ name }}
+# element-boilerplate
 
-> {{ description }}
+> 开箱即用的后台框架，基于饿了么UI
 
-## Build Setup
+![Demo](https://github.com/xialeistudio/element-boilerplate/blob/master/screen.png)
 
-``` bash
-# install dependencies
-npm install
+## 开发步骤
 
-# serve with hot reload at localhost:8080
-npm run dev
+```bash
+# 安装依赖
+yarn
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-{{#unit}}
-
-# run unit tests
-npm run unit
-{{/unit}}
-{{#e2e}}
-
-# run e2e tests
-npm run e2e
-{{/e2e}}
-{{#if_or unit e2e}}
-
-# run all tests
-npm test
-{{/if_or}}
+# 开始开发
+yarn start
 ```
+## 已整合资源
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+1. element-ui
+2. axios(已设置响应拦截器，成功时将直接返回response.data)
+
+
+## 改动
+
+1. 更改主题配色
+2. 取消input和button圆角(可以在App.css修改)
+3. 修改chrome滚动条样式
+
+## 兼容性
+
+使用了以下css特性，请确保浏览器兼容（推荐chrome）
+1. calc
+2. vh/vw
+
+
+
+## SRC目录说明
+
+```text
+├── App.scss              App样式
+├── App.vue               App入口组件
+├── assets                资源目录
+├── components            通用组件
+│   └── Breadcrumb.vue    面包屑（自动适配VueRouter）
+├── main.js               主入口
+├── router                路由定义
+│   └── index.js
+└── routes                业务页面
+    ├── Dashboard.vue     后台布局
+    ├── Home.vue          后台首页
+    └── guest             游客目录
+        └── Login.vue     游客登录
+```
